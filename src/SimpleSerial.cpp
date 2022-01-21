@@ -7,7 +7,7 @@
  */
 
 #include <boost/asio.hpp>
-#include "SimpleSerial.h"
+#include "serial-port/SimpleSerial.h"
 
 SimpleSerial::SimpleSerial(std::string port, unsigned int baud_rate)
     : io(), serial(io,port)

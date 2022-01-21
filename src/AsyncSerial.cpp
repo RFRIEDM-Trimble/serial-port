@@ -27,7 +27,7 @@
  *
  */
 
-#include "AsyncSerial.h"
+#include "serial-port/AsyncSerial.h"
 
 #include <string>
 #include <algorithm>

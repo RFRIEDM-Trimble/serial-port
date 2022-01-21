@@ -19,7 +19,7 @@
  * v1.00: First release.
  */
 
-#include "TimeoutSerial.h"
+#include "serial-port/TimeoutSerial.h"
 #include <string>
 #include <algorithm>
 #include <iostream>

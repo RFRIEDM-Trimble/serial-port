@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "SimpleSerial.h"
+#include "serial-port/SimpleSerial.h"
 
 using namespace std;
 using namespace boost;

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <thread>
 
-#include "BufferedAsyncSerial.h"
+#include "serial-port/BufferedAsyncSerial.h"
 
 using namespace std;
 

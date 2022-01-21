@@ -6,7 +6,7 @@
  */
 
 #include <iostream>
-#include "TimeoutSerial.h"
+#include "serial-port/TimeoutSerial.h"
 
 using namespace std;
 using namespace boost;

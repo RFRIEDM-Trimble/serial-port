@@ -9,7 +9,7 @@
  * v1.00: First release.
  */
 
-#include "SerialStream.h"
+#include "serial-port/SerialStream.h"
 
 #include <iostream>
 #include <boost/asio.hpp>
