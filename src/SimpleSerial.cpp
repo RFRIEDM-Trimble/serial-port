@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   SimpleSerial.cpp
  * Author: Terraneo Federico wrote SimpleSerial.h, but ericfont copied to this .cpp file
  * Distributed under the Boost Software License, Version 1.0.
@@ -12,10 +12,11 @@
 SimpleSerial::SimpleSerial(std::string port, unsigned int baud_rate)
     : io(), serial(io,port)
 {
+    this->io.reset();
     serial.set_option(boost::asio::serial_port_base::baud_rate(baud_rate));
 }
 
-void SimpleSerial::writeString(std::string s)
+void SimpleSerial::write(std::string s)
 {
     boost::asio::write(serial,boost::asio::buffer(s.c_str(),s.size()));
 }
@@ -39,4 +40,15 @@ std::string SimpleSerial::readLine()
             result+=c;
         }
     }
+}
+
+void SimpleSerial::close()
+{
+    this->io.reset();
+    serial.close();
+}
+
+void SimpleSerial::sendBreak()
+{
+    serial.send_break();
 }

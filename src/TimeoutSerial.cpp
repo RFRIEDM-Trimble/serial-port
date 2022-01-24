@@ -242,3 +242,8 @@ void TimeoutSerial::readCompleted(const boost::system::error_code& error,
 
     result=resultError;
 }
+
+void TimeoutSerial::sendBreak()
+{
+    port.send_break();
+}

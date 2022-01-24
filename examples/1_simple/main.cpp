@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 
         SimpleSerial serial("/dev/ttyUSB0",115200);
 
-        serial.writeString("Hello world\n");
+        serial.write("Hello world\n");
 
         cout<<"Received : "<<serial.readLine()<<" : end"<<endl;
 

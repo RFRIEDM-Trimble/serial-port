@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.15 )
 
-project( "simple-boost-serial-port"
+project( "serial-port"
     VERSION 1.11
     DESCRIPTION "A set of C++ classes to easily handle serial ports across different platforms, built on top of boost.asio"
 )
@@ -22,7 +22,8 @@ add_library( ${PROJECT_NAME}
 
 target_include_directories( ${PROJECT_NAME}
     PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+		$<INSTALL_INTERFACE:include>
 	${Boost_INCLUDE_DIR}
 )
 
@@ -32,22 +33,23 @@ target_link_libraries( ${PROJECT_NAME}
 	${CMAKE_THREAD_LIBS_INIT}
 )
 
+
 add_executable(
-	1_simple 
+	1_simple
 	examples/1_simple/main.cpp
 )
 
 target_link_libraries(1_simple ${PROJECT_NAME})
 
 add_executable(
-	2_with_timeout 
+	2_with_timeout
 	examples/2_with_timeout/main.cpp
 )
 
 target_link_libraries(2_with_timeout ${PROJECT_NAME})
 
 add_executable(
-	3_async 
+	3_async
 	examples/3_async/main.cpp
 )
 
@@ -73,8 +75,3 @@ add_executable(
 )
 
 target_link_libraries(6_stream ${PROJECT_NAME})
-
-
-
-
-

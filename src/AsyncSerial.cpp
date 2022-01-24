@@ -163,6 +163,11 @@ void AsyncSerial::writeString(const std::string& s)
     pimpl->io.post(boost::bind(&AsyncSerial::doWrite, this));
 }
 
+void AsyncSerial::sendBreak()
+{
+    pimpl->port.send_break();
+}
+
 AsyncSerial::~AsyncSerial()
 {
     if(isOpen())
